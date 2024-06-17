@@ -1,3 +1,17 @@
+document.getElementById('fetchButton').addEventListener('click', function() {
+  const selectedDate = document.getElementById('inputDate').value;
+  const selectedTime = document.getElementById('inputTime').value;
+  if (selectedDate) {
+      let dateTime = selectedDate;
+      if (selectedTime) {
+          dateTime += `T${selectedTime}`;
+      }
+      getData('R0MMvEaOveYNRgbY8ry9IS0ZRoJ4rzoJEqPghguD', dateTime);
+  } else {
+      alert('Please select a date.');
+  }
+});
+
 async function getData(apikey) {
         // const apiKey = 'R0MMvEaOveYNRgbY8ry9IS0ZRoJ4rzoJEqPghguD';
         // const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
